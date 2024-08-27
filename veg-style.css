@@ -50,7 +50,7 @@ body {
     border-bottom: 3px solid #009245;
     color:  #FCEE21;
 }
-.cart-button {
+.btn-cart {
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 16px;
@@ -61,10 +61,10 @@ body {
     border: 2px solid #009245;
     cursor: pointer;
 }
-.cart-button i {
+.btn-cart i {
     margin-left: 10px;
 }
-.cart-button:hover {
+.btn-cart:hover {
     background: #fff;
     color: #ea21fc;
 }
@@ -89,7 +89,7 @@ body {
 .cart {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 400px;
     height: 100%;
     overflow-y: auto;
@@ -100,7 +100,12 @@ body {
     z-index: 100;
     box-shadow: 0 1px 4px rgba(40, 37, 37, .1);
     padding: 20px;
+    border-left: 2px solid #fff;
 
+}
+.cart-active {
+    right: 0;
+    transition: .4s ease;
 }
 .cart-title {
     text-align: center;
@@ -188,6 +193,9 @@ body {
     right: 20px;
     cursor: pointer;
     font-size: 15px;
+}
+#cart-close:hover{
+    color: #f50909;
 }
 
 /* Food Box */
