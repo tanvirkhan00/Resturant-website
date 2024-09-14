@@ -10,7 +10,7 @@ body {
     font-family: "Ubuntu", sans-serif;
 }
 /* ------Header------- */
-.header-section {
+.food {
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0,0,0,0.6)), url(/Image/home1.jpg);
     background-size: cover;
@@ -216,14 +216,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    border: 2px solid #FCEE21;
-    padding: 0 10px;
+    border: 2px solid #f50909;
+    padding: 20px 10px;
 }
 .food-container .food-box:hover {
     background: rgba(0, 0, 0, 0.5);
@@ -241,7 +241,7 @@ body {
     transform: scale(1.1);
 }
 .food-container .food-box h2 {
-    color: #71e81582;
+    color: #FCEE21;
     font-size: 16px;
     font-weight: 400;
     text-transform: uppercase;
@@ -259,10 +259,11 @@ body {
     outline: 0;
     background: transparent;
     border: 2px solid #FCEE21;
-    color: #009245;
+    color: #FCEE21;
     transition: .4s ease;
     cursor: pointer;
     margin-top: 10px;
+    border-radius: 5px;
 }
 .food-container .food-box .add-cart:hover {
     background: #fff;
