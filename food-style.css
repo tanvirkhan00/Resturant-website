@@ -31,6 +31,9 @@ body {
     font-size: 50px;
     color: #38EF7D;
 }
+.container .icon {
+    display: none;
+}
 .header nav ul{
     display: flex;
     align-items: center;
@@ -45,6 +48,9 @@ body {
     text-transform: uppercase;
     color: #fff;
     border-bottom: 3px solid transparent;
+}
+.header nav .icon {
+    display: none;
 }
 .header nav ul li a:hover {
     border-bottom: 3px solid #009245;
@@ -269,4 +275,99 @@ body {
     background: #fff;
     color: black;
 }
+
+
+
+/* Responsive Page */
+ @media screen and (max-width:480px) {
+    .container {
+        padding: 10px 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .container .heading {
+        font-size: 30px;
+        color: #38EF7D;
+    }
+    .header nav ul{
+        display: none;
+    }
+    .container .icon {
+        color: #FCEE21;
+        display: block;
+    }
+ }
+
+ @media screen and (max-width:800px) and (min-width:480px) {
+    .container {
+        padding: 10px 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .container .heading {
+        font-size: 30px;
+        color: #38EF7D;
+    }
+    .header .icon {
+        display: block;
+    }
+    .header nav ul {
+        gap: 10px;
+    }
+    .header nav ul{
+        display: none;
+    }
+    .container .icon {
+        color: #FCEE21;
+    }
+ }
+
+ @media screen and (max-width:1000px) and (min-width:800px) {
+    .container {
+        padding: 10px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .container .heading {
+        font-size: 30px;
+        color: #38EF7D;
+    }
+    .header .icon{
+        display: none;
+    }
+    .container .icon {
+        color: #FCEE21;
+    }
+    .header nav ul {
+        gap: 15px;
+    }
+ }
+
+ @media screen and (max-width:1200px) and (min-width:1000px) {
+    .container {
+        padding: 10px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .container .heading {
+        font-size: 30px;
+        color: #38EF7D;
+    }
+    .header .icon{
+        display: none;
+    }
+    .container .icon {
+        color: #FCEE21;
+    }
+    .header nav ul {
+        gap: 20px;
+    }
+ }
+
 
