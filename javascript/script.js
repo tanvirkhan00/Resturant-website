@@ -1,14 +1,14 @@
-const btnCart = document.querySelector('.btn-cart');
-const cart = document.querySelector ('.cart');
-const btnClose = document.querySelector("#cart-close");
+// const btnCart = document.querySelector('.btn-cart');
+// const cart = document.querySelector ('.cart');
+// const btnClose = document.querySelector("#cart-close");
 
-btnCart.addEventListener('click', () => {
-    cart.classList.add('cart-active');
-});
+// btnCart.addEventListener('click', () => {
+//     cart.classList.add('cart-active');
+// });
 
-btnClose.addEventListener('click', () => {
-    cart.classList.remove('cart-active')
-});
+// btnClose.addEventListener('click', () => {
+//     cart.classList.remove('cart-active')
+// });
 
 // document.addEventListener('DOMContentLoaded',loadFood);
 
@@ -117,3 +117,25 @@ btnClose.addEventListener('click', () => {
 // else {
 //     cartCount.style.display = 'block';
 // }
+
+
+// Side MenuBar
+
+const hamburger =document.getElementById('hamburger');
+const navMenu =document.getElementById('nav-menu');
+const closeIcon =document.getElementById('nav-close');
+const navLink =document.querySelectorAll('.nav_link');
+
+navLink.forEach(link => 
+    link.addEventListener("click", () => {
+        navMenu.style.display('none');
+    })
+)
+
+closeIcon.addEventListener("click", () => {
+    navMenu.style.display('none');
+})
+
+hamburger.addEventListener("click", () => {
+       navMenu.style.display('none');
+})
