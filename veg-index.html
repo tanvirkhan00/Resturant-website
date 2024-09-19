@@ -14,26 +14,33 @@
 </head>
 <body>
     <section class="food">
-        <header class="header">
-            <div class="container">
-                <h1 class="heading">Vegetarian Foods</h1>
-                <nav>
-                    <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/veg-index.html">Veg</a></li>
-                        <li><a href="/non-veg.html">Non-Veg</a></li>
-                        <li><a href="/ice-cream.html">Ice-Creams</a></li>
-                        <li><a href="/milkshake.html">Milkshakes</a></li>
-                        <li><a href="/juice.html">Juices</a></li>
-                        <li><a href="/cake.html">Cakes</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
-                        <button class="btn-cart">Cart <i class="fa fa-cart-plus" id="cart-icon"></i></button>
+        <div class="header">
+            <div class="logo">
+                <h3>Vegetarian<span>Food</span></h3>
+            </div>
+            <i class="fa-solid fa-bars" id="nav-toggle"></i>
+        </div>
+        <nav class="nav" id="nav-menu">
+            <div class="nav__content bd-grid">
+                <i class="fa-solid fa-xmark" id="nav-close"></i>
+                <div class="nav__menu">
+                    <div class="logo">
+                        <h3>Vegetarian<span>Food</span></h3>
+                    </div>
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/index.html" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="/veg-index.html" class="nav__link">Veg</a></li>
+                        <li class="nav__item"><a href="/non-veg.html" class="nav__link">Non-Veg</a></li>
+                        <li class="nav__item"><a href="/ice-cream.html" class="nav__link">Ice-Creams</a></li>
+                        <li class="nav__item"><a href="/milkshake.html" class="nav__link">Milkshakes</a></li>
+                        <li class="nav__item"><a href="/juice.html" class="nav__link">Juices</a></li>
+                        <li class="nav__item"><a href="/cake.html" class="nav__link">Cakes</a></li>
+                        <li class="nav__item"><a href="/contact.html" class="nav__link">Cantact</a></li>
+                        
                     </ul>
-                </nav>
-                <div class="icon">
-                    <i class="fa-solid fa-bars"></i>
                 </div>
-        </header>
+            </div>
+        </nav>
         <div class="food-container">
             <div class="food-box">
                 <img src="/Image/veg-food.jpg" alt="" class="food-img">
@@ -118,6 +125,6 @@
     <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
 
     <!-- Script Js link -->
-     <script src="javascript/script.js"></script>
+     <script src="javascript/food.js"></script>
 </body>
 </html>
