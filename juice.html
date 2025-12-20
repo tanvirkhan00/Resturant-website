@@ -15,9 +15,13 @@
     <!-- Style Css -->
     <style>
         .food {
-            background: linear-gradient(rgba(12, 11, 9, 0.6),rgba(12,11,9,0.6)), url(/Image/juiceImage3.jpg);
-            background-attachment: fixed;
+            min-height: 100vh;
+            background: linear-gradient(rgba(12, 11, 9, 0.6), rgba(12, 11, 9, 0.6)), 
+                        url('https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=1920');
             background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            padding-bottom: 40px;
         }
      </style>
 </head>
@@ -25,106 +29,115 @@
     <section class="food">
         <div class="header">
             <div class="logo">
-                <h3>Juices</h3>
+                <h3>Fresh <span>Juices</span></h3>
             </div>
-            <i class="fa-solid fa-bars" id="nav-toggle"></i>
-        </div>
-        <nav class="nav" id="nav-menu">
-            <div class="nav__content bd-grid">
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav" id="nav-menu">
                 <i class="fa-solid fa-xmark" id="nav-close"></i>
                 <div class="nav__menu">
                     <div class="logo">
-                        <h3>Juices</h3>
+                        <h3>Fresh <span>Juices</span></h3>
                     </div>
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="/index.html" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="/index.html" class="nav__link">Home</a></li>
                         <li class="nav__item"><a href="/veg-index.html" class="nav__link">Veg</a></li>
                         <li class="nav__item"><a href="/non-veg.html" class="nav__link">Non-Veg</a></li>
                         <li class="nav__item"><a href="/ice-cream.html" class="nav__link">Ice-Creams</a></li>
                         <li class="nav__item"><a href="/milkshake.html" class="nav__link">Milkshakes</a></li>
-                        <li class="nav__item"><a href="/juice.html" class="nav__link">Juices</a></li>
+                        <li class="nav__item"><a href="/juice.html" class="nav__link active">Juices</a></li>
                         <li class="nav__item"><a href="/cake.html" class="nav__link">Cakes</a></li>
-                        <li class="nav__item"><a href="/contact.html" class="nav__link">Cantact</a></li>
+                        <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
+            </nav>
+
+            <div class="header-right">
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+                <i class="fa-solid fa-bars" id="nav-toggle"></i>
             </div>
-        </nav>
+        </div>
+
         <div class="food-container">
             <div class="food-box">
-                <img src="/Image/juiceImage.jpg" alt="" class="food-img">
-                <h2 class="food-title">Chana Masala</h2>
-                <h3 class="food-price">Rs 100$</h3>
+                <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400" alt="Orange Juice" class="food-img">
+                <h2 class="food-title">Orange Juice</h2>
+                <h3 class="food-price">Rs 80</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage1.jpg" alt="" class="food-img">
-                <h2 class="food-title">Aloo Gobi</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=400" alt="Apple Juice" class="food-img">
+                <h2 class="food-title">Apple Juice</h2>
+                <h3 class="food-price">Rs 75</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage2.jpg" alt="" class="food-img">
-                <h2 class="food-title">Eggplant Parmesan</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <img src="https://images.unsplash.com/photo-1560161358-a6cb38a2f90c?w=400" alt="Watermelon Juice" class="food-img">
+                <h2 class="food-title">Watermelon Juice</h2>
+                <h3 class="food-price">Rs 70</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage3.jpg" alt="" class="food-img">
-                <h2 class="food-title">Paneer Butter Masala </h2>
-                <h3 class="food-price">Rs 250$</h3>
+                <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=400" alt="Mango Juice" class="food-img">
+                <h2 class="food-title">Mango Juice</h2>
+                <h3 class="food-price">Rs 90</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage4.jpg" alt="" class="food-img">
-                <h2 class="food-title">Fruit Salad</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400" alt="Pineapple Juice" class="food-img">
+                <h2 class="food-title">Pineapple Juice</h2>
+                <h3 class="food-price">Rs 85</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage5.jpg" alt="" class="food-img">
-                <h2 class="food-title">Vegetarian Pizza</h2>
-                <h3 class="food-price">Rs 350$</h3>
+                <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400" alt="Pomegranate Juice" class="food-img">
+                <h2 class="food-title">Pomegranate Juice</h2>
+                <h3 class="food-price">Rs 95</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage6.jpg" alt="" class="food-img">
-                <h2 class="food-title">Vegetable Samosas</h2>
-                <h3 class="food-price">Rs 200$</h3>
+                <img src="https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=400" alt="Carrot Juice" class="food-img">
+                <h2 class="food-title">Carrot Juice</h2>
+                <h3 class="food-price">Rs 70</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage7.jpg" alt="" class="food-img">
-                <h2 class="food-title">Masala Chai</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=400" alt="Mixed Fruit Juice" class="food-img">
+                <h2 class="food-title">Mixed Fruit Juice</h2>
+                <h3 class="food-price">Rs 100</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage8.jpg" alt="" class="food-img">
-                <h2 class="food-title">Gulab Jamun</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <img src="https://images.unsplash.com/photo-1625869016774-3ba576807132?w=400" alt="Grape Juice" class="food-img">
+                <h2 class="food-title">Grape Juice</h2>
+                <h3 class="food-price">Rs 80</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage9.jpg" alt="" class="food-img">
-                <h2 class="food-title">Vegetable Lasagna</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <img src="https://images.unsplash.com/photo-1568471173432-c5e3bb2e5fe6?w=400" alt="Lemonade" class="food-img">
+                <h2 class="food-title">Fresh Lemonade</h2>
+                <h3 class="food-price">Rs 60</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage10.jpg" alt="" class="food-img">
-                <h2 class="food-title">Vegetable Biryani</h2>
-                <h3 class="food-price">Rs 120$</h3>
+                <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=400" alt="Beetroot Juice" class="food-img">
+                <h2 class="food-title">Beetroot Juice</h2>
+                <h3 class="food-price">Rs 75</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/juiceImage4.jpg" alt="" class="food-img">
-                <h2 class="food-title">Vegetable Raita</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400" alt="Green Detox Juice" class="food-img">
+                <h2 class="food-title">Green Detox Juice</h2>
+                <h3 class="food-price">Rs 110</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
         </div>
-        <div class="footer" style="text-align: center; color: beige; font-size: 14px; padding-bottom:10px;">
-            <p>&copy; all right reserve by resturant website</p>
+
+        <div class="footer">
+            <p>&copy; 2024 All Rights Reserved by Fresh Juice Bar</p>
         </div>
     </section>
 

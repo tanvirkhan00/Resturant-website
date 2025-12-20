@@ -1,122 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Css Link -->
-     <link rel="stylesheet" href="/food-style.css">
+    <link rel="stylesheet" href="/food-style.css">
 
     <!-- Fav Icon -->
     <link rel="shortcut icon" href="/Image/veg-food2.jpg" type="image/x-icon">
 
-     <!-- Title Page -->
+    <!-- Title Page -->
     <title>Veg Foods</title>
+
 </head>
 <body>
+
+    
     <section class="food">
         <div class="header">
             <div class="logo">
                 <h3>Vegetarian<span>Food</span></h3>
             </div>
-            <i class="fa-solid fa-bars" id="nav-toggle"></i>
-        </div>
-        <nav class="nav" id="nav-menu">
-            <div class="nav__content bd-grid">
+
+            <!-- Desktop Navigation -->
+            <nav class="nav" id="nav-menu">
                 <i class="fa-solid fa-xmark" id="nav-close"></i>
                 <div class="nav__menu">
                     <div class="logo">
                         <h3>Vegetarian<span>Food</span></h3>
                     </div>
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="/index.html" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="/veg-index.html" class="nav__link">Veg</a></li>
+                        <li class="nav__item"><a href="/index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="/veg-index.html" class="nav__link active">Veg</a></li>
                         <li class="nav__item"><a href="/non-veg.html" class="nav__link">Non-Veg</a></li>
                         <li class="nav__item"><a href="/ice-cream.html" class="nav__link">Ice-Creams</a></li>
                         <li class="nav__item"><a href="/milkshake.html" class="nav__link">Milkshakes</a></li>
                         <li class="nav__item"><a href="/juice.html" class="nav__link">Juices</a></li>
                         <li class="nav__item"><a href="/cake.html" class="nav__link">Cakes</a></li>
-                        <li class="nav__item"><a href="/contact.html" class="nav__link">Cantact</a></li>
-                        
+                        <li class="nav__item"><a href="/contact.html" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
+            </nav>
+
+            <div class="header-right">
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+                <i class="fa-solid fa-bars" id="nav-toggle"></i>
             </div>
-        </nav>
+        </div>
+
         <div class="food-container">
             <div class="food-box">
-                <img src="/Image/veg-food.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400" alt="Chana Masala"
+                    class="food-img">
                 <h2 class="food-title">Chana Masala</h2>
-                <h3 class="food-price">Rs 100$</h3>
+                <h3 class="food-price">Rs 100</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food1.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400" alt="Aloo Gobi"
+                    class="food-img">
                 <h2 class="food-title">Aloo Gobi</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <h3 class="food-price">Rs 150</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food2.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1576020799627-aeac74d58064?w=400" alt="Eggplant Parmesan"
+                    class="food-img">
                 <h2 class="food-title">Eggplant Parmesan</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <h3 class="food-price">Rs 150</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food3.jpg" alt="" class="food-img">
-                <h2 class="food-title">Paneer Butter Masala </h2>
-                <h3 class="food-price">Rs 250$</h3>
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400" alt="Paneer Butter Masala"
+                    class="food-img">
+                <h2 class="food-title">Paneer Butter Masala</h2>
+                <h3 class="food-price">Rs 250</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food4.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1564093497595-593b96d80180?w=400" alt="Fruit Salad"
+                    class="food-img">
                 <h2 class="food-title">Fruit Salad</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <h3 class="food-price">Rs 150</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food5.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1511689660979-10d2b1aada49?w=400" alt="Vegetarian Pizza"
+                    class="food-img">
                 <h2 class="food-title">Vegetarian Pizza</h2>
-                <h3 class="food-price">Rs 350$</h3>
+                <h3 class="food-price">Rs 350</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food6.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400" alt="Vegetable Samosas"
+                    class="food-img">
                 <h2 class="food-title">Vegetable Samosas</h2>
-                <h3 class="food-price">Rs 200$</h3>
+                <h3 class="food-price">Rs 200</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food7.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=400" alt="Masala Chai"
+                    class="food-img">
                 <h2 class="food-title">Masala Chai</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <h3 class="food-price">Rs 50</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food8.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1642821373181-696a54913e93?w=400" alt="Gulab Jamun"
+                    class="food-img">
                 <h2 class="food-title">Gulab Jamun</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <h3 class="food-price">Rs 80</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food9.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400" alt="Vegetable Lasagna"
+                    class="food-img">
                 <h2 class="food-title">Vegetable Lasagna</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <h3 class="food-price">Rs 280</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food10.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400" alt="Vegetable Biryani"
+                    class="food-img">
                 <h2 class="food-title">Vegetable Biryani</h2>
-                <h3 class="food-price">Rs 120$</h3>
+                <h3 class="food-price">Rs 220</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
             <div class="food-box">
-                <img src="/Image/veg-food11.jpg" alt="" class="food-img">
+                <img src="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=400" alt="Vegetable Raita"
+                    class="food-img">
                 <h2 class="food-title">Vegetable Raita</h2>
-                <h3 class="food-price">Rs 150$</h3>
+                <h3 class="food-price">Rs 70</h3>
                 <button class="add-cart">Add to cart</button>
             </div>
         </div>
-        <div class="footer" style="text-align: center; color: beige; font-size: 14px; padding-bottom:10px;">
-            <p>&copy; all right reserve by resturant website</p>
+
+        <div class="footer">
+            <p>&copy; 2024 All Rights Reserved by Vegetarian Restaurant</p>
         </div>
     </section>
 
@@ -125,6 +149,7 @@
     <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
 
     <!-- Script Js link -->
-     <script src="javascript/food.js"></script>
+    <script src="javascript/food.js"></script>
+
 </body>
 </html>

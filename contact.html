@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,56 +10,54 @@
 
     <!-- Fav Icon -->
     <link rel="shortcut icon" href="/Image/cakeImage2.jpg" type="image/x-icon">
-    
+
     <!-- Title Page -->
     <title>Contact</title>
-    <style>
-        .contact {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0,0,0,0.6)), url(/Image/home1.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            height: 100%;
-        }
-    </style>
 </head>
+
 <body>
 
     <section class="contact">
         <div class="header">
             <div class="logo">
-                <h3>Contact</h3>
+                <h3>Contact <span>Us</span></h3>
             </div>
-            <i class="fa-solid fa-bars" id="nav-toggle"></i>
-        </div>
-        <nav class="nav" id="nav-menu">
-            <div class="nav__content bd-grid">
+
+            <!-- Desktop Navigation -->
+            <nav class="nav" id="nav-menu">
                 <i class="fa-solid fa-xmark" id="nav-close"></i>
                 <div class="nav__menu">
                     <div class="logo">
-                        <h3>Contact</h3>
+                        <h3>Contact <span>Us</span></h3>
                     </div>
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="/index.html" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="/index.html" class="nav__link">Home</a></li>
                         <li class="nav__item"><a href="/veg-index.html" class="nav__link">Veg</a></li>
                         <li class="nav__item"><a href="/non-veg.html" class="nav__link">Non-Veg</a></li>
                         <li class="nav__item"><a href="/ice-cream.html" class="nav__link">Ice-Creams</a></li>
                         <li class="nav__item"><a href="/milkshake.html" class="nav__link">Milkshakes</a></li>
                         <li class="nav__item"><a href="/juice.html" class="nav__link">Juices</a></li>
                         <li class="nav__item"><a href="/cake.html" class="nav__link">Cakes</a></li>
-                        <li class="nav__item"><a href="/contact.html" class="nav__link">Cantact</a></li>
-                        
+                        <li class="nav__item"><a href="/contact.html" class="nav__link active">Contact</a></li>
                     </ul>
                 </div>
+            </nav>
+
+            <div class="header-right">
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+                <i class="fa-solid fa-bars" id="nav-toggle"></i>
             </div>
-        </nav>
+        </div>
 
         <div class="container">
             <div class="panel address">
                 <div class="box box1">
                     <i class="fa fa-address-card"></i>
                     <h1>Delicious City</h1>
-                    <h2>286, Asad Aveneu</h2>
+                    <h2>286, Asad Avenue</h2>
                     <h2>Mohammadpur City</h2>
                 </div>
                 <div class="box box2">
@@ -74,13 +73,14 @@
                     <h5>www.delicious-city.com</h5>
                 </div>
             </div>
+
             <div class="panel contactBox">
-                <h1>Contact</h1>
+                <h1>Contact Us</h1>
                 <div class="form-group">
                     <input type="text" id="txtName" placeholder="Your Name">
                 </div>
                 <div class="form-group">
-                    <input type="number" id="numPhone" placeholder="Your Number">
+                    <input type="number" id="numPhone" placeholder="Your Phone Number">
                 </div>
                 <div class="form-group">
                     <input type="email" id="txtEmail" placeholder="Your Email">
@@ -89,12 +89,13 @@
                     <textarea name="Message" id="txtMsg" cols="30" rows="5" placeholder="Your Message"></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn-sent">Sent</button>
+                    <button class="btn-sent">Send Message</button>
                 </div>
             </div>
         </div>
-        <div class="footer" style="text-align: center; color: beige; font-size: 14px; padding-bottom:10px;">
-            <p>&copy; all right reserve by resturant website</p>
+
+        <div class="footer">
+            <p>&copy; 2024 All Rights Reserved by Delicious Restaurant</p>
         </div>
     </section>
 
@@ -104,6 +105,7 @@
 
     <!-- Script Js link -->
     <script src="javascript/food.js"></script>
-    
+
 </body>
+
 </html>
