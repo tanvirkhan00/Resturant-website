@@ -107,15 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
 });
 
-// Cart icon click handler
-document.getElementById('cart-icon').addEventListener('click', (e) => {
-    // Only show alert if not clicking the link
-    if (e.target.tagName !== 'A') {
-        const cart = getCart();
-        if (cart.length > 0) {
-            alert(`You have ${cart.reduce((sum, i) => sum + i.quantity, 0)} item(s) in your cart`);
-        } else {
-            alert('Your cart is empty!');
-        }
-    }
-});
+// // Cart icon click handler
+// document.getElementById('cart-icon').addEventListener('click', (e) => {
+//     // Only show alert if not clicking the link
+//     if (e.target.tagName !== 'A') {
+//         const cart = getCart();
+//         if (cart.length > 0) {
+//             alert(`You have ${cart.reduce((sum, i) => sum + i.quantity, 0)} item(s) in your cart`);
+//         } else {
+//             alert('Your cart is empty!');
+//         }
+//     }
+// });
