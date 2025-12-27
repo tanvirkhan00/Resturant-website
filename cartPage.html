@@ -3,129 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/cart-style.css">
-
-    <!-- Favicon -->
     <link rel="shortcut icon" href="/Image/home1.jpg" type="image/x-icon">
-
     <title>Shopping Cart | Delicious City</title>
+    <link rel="stylesheet" href="/css/cart-style.css">
 </head>
-
 <body>
 
-<section class="cart-page">
-
-    <!-- ================= HEADER ================= -->
+    <!-- Header -->
     <header class="header">
-        <div class="logo">
-            <h3>Delicious<span>City</span></h3>
-        </div>
-
-        <!-- Navigation -->
-        <nav class="nav" id="nav-menu">
-            <button class="nav-close" id="nav-close" aria-label="Close menu">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <ul class="nav__list">
-                <li><a href="/index.html" class="nav__link">Home</a></li>
-                <li><a href="/veg-index.html" class="nav__link">Veg</a></li>
-                <li><a href="/non-veg.html" class="nav__link">Non-Veg</a></li>
-                <li><a href="/ice-cream.html" class="nav__link">Ice-Creams</a></li>
-                <li><a href="/milkshake.html" class="nav__link">Milkshakes</a></li>
-                <li><a href="/juice.html" class="nav__link">Juices</a></li>
-                <li><a href="/cake.html" class="nav__link">Cakes</a></li>
-                <li><a href="/contact.html" class="nav__link">Contact</a></li>
-            </ul>
-        </nav>
+        <a href="/index.html">
+            <div class="logo">
+                <h3>Delicious<span>City</span></h3>
+            </div>
+        </a>
 
         <div class="header-right">
-            <div class="cart-icon" id="cart-icon" aria-label="Cart">
+            <div class="cart-icon" id="cart-icon">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span class="cart-count" id="cart-count">0</span>
             </div>
-
-            <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
         </div>
     </header>
 
-    <!-- ================= CART CONTENT ================= -->
-    <main class="cart-content">
+    <!-- Cart Container -->
+    <div class="cart-container">
+        <h1 class="page-title">Shopping Cart</h1>
 
-        <div class="cart-header">
-            <h1>Your Shopping Cart</h1>
-
-            <button class="clear-cart" id="clear-cart">
-                <i class="fa-solid fa-trash"></i>
-                Clear Cart
-            </button>
-        </div>
-
-        <!-- Empty Cart -->
+        <!-- Empty Cart Message -->
         <div class="empty-cart" id="empty-cart">
             <i class="fa-solid fa-cart-shopping"></i>
             <h2>Your cart is empty</h2>
             <p>Add some delicious items to get started!</p>
-            <a href="/index.html" class="continue-shopping">
-                Continue Shopping
-            </a>
+            <a href="/veg-index.html" class="back-btn">Continue Shopping</a>
         </div>
 
-        <!-- Cart Items -->
-        <section class="cart-items-container" id="cart-items-container">
-            <!-- Items injected by JS -->
-        </section>
+        <!-- Order Summary -->
+        <div class="order-summary" id="order-summary" style="display: none;">
+            <h2 class="summary-header">Order Summary</h2>
 
-        <!-- Cart Summary -->
-        <aside class="cart-summary" id="cart-summary">
-            <div class="summary-row">
-                <span>Subtotal</span>
-                <span id="subtotal">Rs 0</span>
+            <div class="summary-table-header">
+                <div></div>
+                <div>Product Title</div>
+                <div>Price</div>
+                <div style="text-align: center;">Quantity</div>
+                <div style="text-align: right;">Total</div>
             </div>
 
-            <div class="summary-row">
-                <span>Delivery Fee</span>
-                <span id="delivery-fee">Rs 50</span>
+            <div id="cart-items"></div>
+
+            <div class="total-section">
+                <div class="total-quantity">
+                    <span>Total</span>
+                    <span id="total-items">0</span>
+                </div>
+                <div class="total-price" id="total-price">$0.00</div>
             </div>
 
-            <div class="summary-row">
-                <span>Tax (5%)</span>
-                <span id="tax">Rs 0</span>
+            <div class="action-buttons">
+                <button class="clear-btn" id="clear-cart">
+                    <i class="fa-solid fa-trash"></i> Clear Cart
+                </button>
+                <button class="checkout-btn" id="checkout-btn">
+                    <i class="fa-solid fa-credit-card"></i> Proceed to Checkout
+                </button>
             </div>
+        </div>
+    </div>
 
-            <div class="summary-row total">
-                <span>Total</span>
-                <span id="total">Rs 0</span>
-            </div>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
-            <button class="checkout-btn" id="checkout-btn">
-                <i class="fa-solid fa-credit-card"></i>
-                Proceed to Checkout
-            </button>
-
-            <a href="/index.html" class="continue-shopping-link">
-                Continue Shopping
-            </a>
-        </aside>
-
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <p>&copy; 2024 Delicious City Restaurant. All rights reserved.</p>
-    </footer>
-
-</section>
-
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
-
-<!-- Cart Script -->
-<script src="/javascript/cart.js"></script>
+    <!-- Cart Script -->
+    <script src="javascript/cart.js"></script>
 
 </body>
 </html>

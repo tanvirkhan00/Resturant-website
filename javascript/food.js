@@ -26,9 +26,11 @@ navLinks.forEach(link => {
     });
 });
 
+
 // Add to cart functionality
 function getCart() {
-    return JSON.parse(localStorage.getItem('cart')) || [];
+    const stored = localStorage.getItem('cart');
+    return stored ? JSON.parse(stored) : [];
 }
 
 function saveCart(cart) {
@@ -36,9 +38,11 @@ function saveCart(cart) {
 }
 
 function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    if (!cartCount) return;
+    
     const cart = getCart();
-    let totalQty = 0;
-    cart.forEach(item => totalQty += item.quantity);
+    const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalQty;
 }
 
@@ -46,14 +50,17 @@ const cartButtons = document.querySelectorAll('.add-cart');
 
 cartButtons.forEach(button => {
     button.addEventListener('click', function () {
-
         const foodBox = this.closest('.food-box');
 
-        const id = foodBox.dataset.id; // 🔴 add data-id in HTML
+        // Get the id from the food-box's id attribute (e.g., "product-1")
+        const id = foodBox.id;
         const title = foodBox.querySelector('.food-title').textContent;
-        const price = parseFloat(
-            foodBox.querySelector('.food-price').textContent.replace('৳', '')
-        );
+        const priceText = foodBox.querySelector('.food-price').textContent;
+        const price = parseFloat(priceText.replace('Rs', '').trim());
+
+        // Get image source
+        const imgElement = foodBox.querySelector('.food-img');
+        const image = imgElement ? imgElement.src : '';
 
         let cart = getCart();
 
@@ -67,6 +74,7 @@ cartButtons.forEach(button => {
                 id,
                 title,
                 price,
+                image,
                 quantity: 1
             });
         }
@@ -90,16 +98,24 @@ cartButtons.forEach(button => {
             this.style.color = '#FCEE21';
         }, 1500);
 
-        console.log(cart);
+        console.log('Cart:', cart);
     });
 });
 
-document.addEventListener('DOMContentLoaded', updateCartCount);
-document.getElementById('cart-icon').addEventListener('click', () => {
-    const cart = getCart();
-    if (cart.length > 0) {
-        alert(`You have ${cart.reduce((sum, i) => sum + i.quantity, 0)} item(s) in your cart`);
-    } else {
-        alert('Your cart is empty!');
+// Initialize cart count on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+});
+
+// Cart icon click handler
+document.getElementById('cart-icon').addEventListener('click', (e) => {
+    // Only show alert if not clicking the link
+    if (e.target.tagName !== 'A') {
+        const cart = getCart();
+        if (cart.length > 0) {
+            alert(`You have ${cart.reduce((sum, i) => sum + i.quantity, 0)} item(s) in your cart`);
+        } else {
+            alert('Your cart is empty!');
+        }
     }
 });
