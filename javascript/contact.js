@@ -93,9 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = document.getElementById('txtName').value.trim();
         const phone = document.getElementById('numPhone').value.trim();
         const email = document.getElementById('txtEmail').value.trim();
+        const location = document.getElementById('txtLocation').value.trim();
         const message = document.getElementById('txtMsg').value.trim();
 
-        if (!name || !phone || !email || !message) {
+        if (!name || !phone || !email || !location || !message) {
             alert('Please fill in all fields!');
             return;
         }
@@ -111,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             customer_name: name,
             customer_phone: phone,
             customer_email: email,
+            customer_location: location,
             customer_message: message,
             order_details: cartDetails
         }).then(() => {
@@ -120,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('txtName').value = '';
             document.getElementById('numPhone').value = '';
             document.getElementById('txtEmail').value = '';
+            document.getElementById('txtLocation').value = '';
             document.getElementById('txtMsg').value = '';
 
             // OPTIONAL: clear cart after order
