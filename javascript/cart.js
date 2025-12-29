@@ -107,10 +107,7 @@ document.getElementById('clear-cart').addEventListener('click', () => {
 document.getElementById('checkout-btn').addEventListener('click', () => {
     const cart = getCart();
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    alert(`Order placed successfully!\nTotal: ৳ ${total.toFixed(0)}\n\nThank you for your order!`);
-    localStorage.removeItem('cart');
-    displayCart();
-    updateCartCount();
+    alert(`To complete the order fill up the contact form!\nTotal: ৳ ${total.toFixed(0)}\n\nThank you for your order!`);
 });
 
 // Initialize

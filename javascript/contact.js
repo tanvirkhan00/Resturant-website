@@ -1,70 +1,136 @@
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
-const navClose = document.getElementById('nav-close');
-const cartCount = document.getElementById('cart-count');
-let itemsInCart = 0;
-
-// Open menu
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show');
-    });
+/*************************
+ CART FUNCTIONS
+**************************/
+function getCart() {
+    const stored = localStorage.getItem('cart');
+    return stored ? JSON.parse(stored) : [];
 }
 
-// Close menu
-if (navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show');
-    });
-}
+function updateCartCount() {
+    const cart = getCart();
+    const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-// Close menu when clicking on a link
-const navLinks = document.querySelectorAll('.nav__link');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('show');
-    });
-});
-
-// Cart icon click
-document.getElementById('cart-icon').addEventListener('click', () => {
-    if (itemsInCart > 0) {
-        alert(`You have ${itemsInCart} item(s) in your cart!`);
-    } else {
-        alert('Your cart is empty!');
+    const cartCountEl = document.getElementById('cart-count');
+    if (cartCountEl) {
+        cartCountEl.textContent = totalQty;
     }
-});
+}
 
-// Contact form submission
-const sendButton = document.querySelector('.btn-sent');
-sendButton.addEventListener('click', function () {
-    const name = document.getElementById('txtName').value;
-    const phone = document.getElementById('numPhone').value;
-    const email = document.getElementById('txtEmail').value;
-    const message = document.getElementById('txtMsg').value;
+function formatCartForEmail(cart) {
+    if (cart.length === 0) return 'Cart is empty';
 
-    if (name && phone && email && message) {
-        // Visual feedback
+    let text = 'Order Details:\n\n';
+    let grandTotal = 0;
+
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        grandTotal += itemTotal;
+
+        text += `${index + 1}. ${item.title}\n`;
+        text += `Quantity: ${item.quantity}\n`;
+        text += `Price: ৳ ${item.price}\n`;
+        text += `Item Total: ৳ ${itemTotal}\n\n`;
+    });
+
+    text += `----------------------\n`;
+    text += `Grand Total: ৳ ${grandTotal}`;
+
+    return text;
+}
+
+/*************************
+ DOM READY
+**************************/
+document.addEventListener('DOMContentLoaded', () => {
+
+    /******** NAV MENU ********/
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navClose = document.getElementById('nav-close');
+
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.add('show');
+        });
+    }
+
+    if (navClose) {
+        navClose.addEventListener('click', () => {
+            navMenu.classList.remove('show');
+        });
+    }
+
+    document.querySelectorAll('.nav__link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('show');
+        });
+    });
+
+    /******** CART COUNT ********/
+    updateCartCount();
+    window.addEventListener('storage', updateCartCount);
+
+    /******** CART ICON CLICK ********/
+    const cartIcon = document.getElementById('cart-icon');
+    if (cartIcon) {
+        cartIcon.addEventListener('click', () => {
+            const cart = getCart();
+            if (cart.length > 0) {
+                window.location.href = '/cartPage.html';
+            } else {
+                alert('Your cart is empty!');
+            }
+        });
+    }
+
+    /******** CONTACT FORM ********/
+    const sendButton = document.querySelector('.btn-sent');
+
+    if (!sendButton) return;
+
+    sendButton.addEventListener('click', function () {
+
+        const name = document.getElementById('txtName').value.trim();
+        const phone = document.getElementById('numPhone').value.trim();
+        const email = document.getElementById('txtEmail').value.trim();
+        const message = document.getElementById('txtMsg').value.trim();
+
+        if (!name || !phone || !email || !message) {
+            alert('Please fill in all fields!');
+            return;
+        }
+
+        const cart = getCart();
+        const cartDetails = formatCartForEmail(cart);
+
         this.textContent = 'Sending...';
-        this.style.background = 'linear-gradient(135deg, #00ff00, #00cc00)';
+        this.disabled = true;
 
-        setTimeout(() => {
-            this.textContent = 'Message Sent!';
+        /* ===== EMAILJS SEND ===== */
+        emailjs.send("service_2upfvpt", "template_7hdom08", {
+            customer_name: name,
+            customer_phone: phone,
+            customer_email: email,
+            customer_message: message,
+            order_details: cartDetails
+        }).then(() => {
 
-            // Clear form
+            alert('Message sent successfully!');
+
             document.getElementById('txtName').value = '';
             document.getElementById('numPhone').value = '';
             document.getElementById('txtEmail').value = '';
             document.getElementById('txtMsg').value = '';
 
-            setTimeout(() => {
-                this.textContent = 'Send Message';
-                this.style.background = 'linear-gradient(135deg, #00d9ff, #0099cc)';
-            }, 2000);
-        }, 1000);
+            // OPTIONAL: clear cart after order
+            localStorage.removeItem('cart');
+            updateCartCount();
 
-        console.log('Form submitted:', { name, phone, email, message });
-    } else {
-        alert('Please fill in all fields!');
-    }
+            this.textContent = 'Send Message';
+            this.disabled = false;
+
+        }).catch(error => {
+            console.error("EmailJS Error:", error);
+        });
+    });
 });
