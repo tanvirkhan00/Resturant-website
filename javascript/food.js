@@ -56,7 +56,7 @@ cartButtons.forEach(button => {
         const id = foodBox.id;
         const title = foodBox.querySelector('.food-title').textContent;
         const priceText = foodBox.querySelector('.food-price').textContent;
-        const price = parseFloat(priceText.replace('Rs', '').trim());
+        const price = parseFloat(priceText.replace('৳', '').trim());
 
         // Get image source
         const imgElement = foodBox.querySelector('.food-img');

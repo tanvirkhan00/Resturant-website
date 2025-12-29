@@ -36,7 +36,7 @@ function displayCart() {
                 <div class="cart-item">
                     <img src="${item.image || 'https://via.placeholder.com/70'}" alt="${item.title}" class="item-image">
                     <div class="item-title">${item.title}</div>
-                    <div class="item-price">Rs ${item.price}</div>
+                    <div class="item-price">৳ ${item.price}</div>
                     <div style="display: flex; align-items: center; gap: 15px; justify-content: center;">
                         <div class="quantity-controls">
                             <button class="qty-btn" onclick="decreaseQuantity(${index})">−</button>
@@ -47,7 +47,7 @@ function displayCart() {
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </div>
-                    <div class="item-total">Rs ${(item.price * item.quantity).toFixed(0)}</div>
+                    <div class="item-total">৳ ${(item.price * item.quantity).toFixed(0)}</div>
                 </div>
             `).join('');
 
@@ -60,7 +60,7 @@ function updateTotals(cart) {
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
     document.getElementById('total-items').textContent = totalItems;
-    document.getElementById('total-price').textContent = `Rs ${totalPrice.toFixed(0)}`;
+    document.getElementById('total-price').textContent = `৳ ${totalPrice.toFixed(0)}`;
 }
 
 // Increase quantity
@@ -107,7 +107,7 @@ document.getElementById('clear-cart').addEventListener('click', () => {
 document.getElementById('checkout-btn').addEventListener('click', () => {
     const cart = getCart();
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    alert(`Order placed successfully!\nTotal: Rs ${total.toFixed(0)}\n\nThank you for your order!`);
+    alert(`Order placed successfully!\nTotal: ৳ ${total.toFixed(0)}\n\nThank you for your order!`);
     localStorage.removeItem('cart');
     displayCart();
     updateCartCount();
